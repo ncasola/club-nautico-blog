@@ -106,14 +106,14 @@ export default async function NewsPage({ params }: NewsPageProps) {
                     <Clock className="w-4 h-4 mr-2" />
                     Publicado el {formatDate(article.date)}
                   </div>
-                  <div className="flex gap-3">
-                    <Link href="/">
-                      <Button variant="liquidGlass" className="dark:text-muted-foreground">
+                  <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
+                    <Link href="/" className="w-full md:w-auto">
+                      <Button variant="liquidGlass" className="w-full md:w-auto dark:text-muted-foreground">
                         Ver todas las noticias
                       </Button>
                     </Link>
-                    <Link href="/">
-                      <Button variant="liquidGlass" className="dark:text-muted-foreground">
+                    <Link href="/" className="w-full md:w-auto">
+                      <Button variant="liquidGlass" className="w-full md:w-auto dark:text-muted-foreground">
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         Volver al inicio
                       </Button>
