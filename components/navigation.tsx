@@ -16,11 +16,11 @@ export function Navigation() {
   ]
 
   return (
-    <nav className="bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-50">
+    <nav className="bg-background/80 backdrop-blur-md border-b  sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="bg-background rounded-full p-2 border border-border">
+            <div className="bg-background rounded-full p-2 border ">
               <Image src="/logotipo.png" alt="Club Náutico Puertito de Güímar" width={24} height={24} className="w-6 h-6" />
             </div>
             <div className="hidden md:block">
@@ -52,7 +52,7 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-background/95 backdrop-blur-md">
               <div className="flex items-center space-x-2 mb-8">
-                <div className="bg-background rounded-full p-2 border border-border">
+                <div className="bg-background rounded-full p-2 border ">
                   <Image src="/logotipo.png" alt="Club Náutico Puertito de Güímar" width={24} height={24} className="w-6 h-6" />
                 </div>
                 <div>
