@@ -11,7 +11,22 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Blog - Club Náutico Puertito de Güímar",
   description: "Últimas noticias y actividades del Club Náutico Puertito de Güímar. Contigo desde 1970.",
-  generator: 'v0.dev'
+  manifest: '/manifest.json',
+  icons: {
+    apple: '/apple-touch-icon.png',
+  },
+  appleWebApp: {
+    title: "Nautico Guimar",
+    statusBarStyle: "black-translucent",
+  },
+  themeColor: "#000000",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: "cover",
+  }
 }
 
 export default function RootLayout({

@@ -30,22 +30,23 @@ export function NewsCard({ article }: NewsCardProps) {
   }
 
   return (
-    <Card className="group liquid-glass shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-      <Link href={`/news/${article.id}`} className="block">
+    <Card className="group liquid-glass shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden h-full flex flex-col">
+      <Link href={`/news/${article.id}`} className="block h-full flex-col">
         {article.image && (
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative h-56 w-full overflow-hidden -mt-6 -mx-6">
             <Image
               src={article.image || "https://placehold.co/600x400"}
               alt={article.title}
               fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={false}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </div>
         )}
 
-        <CardHeader className="pb-4">
+        <CardHeader className="p-6 flex-shrink-0">
           <div className="flex items-center gap-2 mb-3">
             <Badge variant="secondary" className="bg-blue-100/80 text-blue-800 border-blue-200/50">
               <Calendar className="w-3 h-3 mr-1" />
@@ -61,13 +62,13 @@ export function NewsCard({ article }: NewsCardProps) {
           </h3>
         </CardHeader>
 
-        <CardContent className="pb-4">
+        <CardContent className="pb-4 flex-grow">
           <p className="text-black/80 line-clamp-3 leading-relaxed dark:text-muted-foreground">{article.excerpt}</p>
         </CardContent>
 
-        <CardFooter className="pt-4">
+        <CardFooter className="pt-4 flex-shrink-0">
           <Button
-            variant="liquid-glass"
+            variant="liquidGlass"
             className="w-full justify-between"
           >
             Leer más

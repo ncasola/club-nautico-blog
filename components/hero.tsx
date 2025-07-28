@@ -22,7 +22,7 @@ export default async function Hero() {
       <div className="absolute inset-0 bg-slate-800/80"></div>
 
       {/* Pattern overlay */}
-      <div className="absolute inset-0 bg-blue-600/10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]"></div>
+      <div className="absolute inset-0 bg-blue-600/10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-size-[20px_20px]"></div>
 
       {/* Content */}
       <div className="relative container mx-auto px-4 py-16 md:py-24 h-full flex items-center justify-center">
@@ -42,13 +42,13 @@ export default async function Hero() {
 
           {/* Decorative wave */}
           <div className="mt-8 flex justify-center">
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-white/60 to-transparent rounded-full"></div>
+            <div className="w-24 h-1 bg-linear-to-r from-transparent via-white/60 to-transparent rounded-full"></div>
           </div>
         </div>
       </div>
 
       {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background via-background/80 to-transparent"></div>
     </div>
   )
 }

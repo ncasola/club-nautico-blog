@@ -109,7 +109,7 @@ export function NewsGrid({ initialData }: NewsGridProps) {
         </div>
 
         {(searchTerm || selectedCategory !== "Todas") && (
-          <div className="mt-4 text-sm text-slate-600">
+          <div className="mt-4 text-sm text-slate-600 dark:text-white">
             {filteredAndSortedNews.length} resultado{filteredAndSortedNews.length !== 1 ? "s" : ""} encontrado
             {filteredAndSortedNews.length !== 1 ? "s" : ""}
             {searchTerm && ` para "${searchTerm}"`}
@@ -135,7 +135,7 @@ export function NewsGrid({ initialData }: NewsGridProps) {
 
           {hasMore && (
             <div className="text-center">
-              <Button variant="liquid-glass" className="mb-4 dark:text-muted-foreground" onClick={() => setVisibleCount((prev) => prev + 6)}>
+              <Button variant="liquidGlass" className="mb-4 dark:text-muted-foreground" onClick={() => setVisibleCount((prev) => prev + 6)}>
                 Cargar más noticias
               </Button>
             </div>

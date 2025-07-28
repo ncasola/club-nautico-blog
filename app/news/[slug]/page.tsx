@@ -42,7 +42,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <Link href="/">
-            <Button variant="liquid-glass" className="mb-4 dark:text-muted-foreground">
+            <Button variant="liquidGlass" className="mb-4 dark:text-muted-foreground">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Volver a noticias
             </Button>
@@ -62,10 +62,10 @@ export default async function NewsPage({ params }: NewsPageProps) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
               </div>
             ) : (
-              <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden bg-gradient-to-r from-blue-100 to-cyan-100 flex items-center justify-center">
+              <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden bg-linear-to-r from-blue-100 to-cyan-100 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-16 h-16 mx-auto mb-4 bg-blue-200 rounded-full flex items-center justify-center">
                     <Tag className="w-8 h-8 text-blue-600" />
@@ -108,12 +108,12 @@ export default async function NewsPage({ params }: NewsPageProps) {
                   </div>
                   <div className="flex gap-3">
                     <Link href="/">
-                      <Button variant="liquid-glass" className="dark:text-muted-foreground">
+                      <Button variant="liquidGlass" className="dark:text-muted-foreground">
                         Ver todas las noticias
                       </Button>
                     </Link>
                     <Link href="/">
-                      <Button variant="liquid-glass" className="dark:text-muted-foreground">
+                      <Button variant="liquidGlass" className="dark:text-muted-foreground">
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         Volver al inicio
                       </Button>
@@ -165,7 +165,7 @@ async function RelatedArticles({ currentArticle }: { currentArticle: any }) {
                   />
                 </div>
               ) : (
-                <div className="h-32 mb-3 rounded-md bg-gradient-to-r from-slate-100 to-slate-200 flex items-center justify-center">
+                <div className="h-32 mb-3 rounded-md bg-linear-to-r from-slate-100 to-slate-200 flex items-center justify-center">
                   <Tag className="w-8 h-8 text-slate-400" />
                 </div>
               )}

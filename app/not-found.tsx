@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20 flex items-center justify-center">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-cyan-50/20 flex items-center justify-center">
       <div className="container mx-auto px-4 text-center">
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl border border-white/20 shadow-xl p-12 max-w-2xl mx-auto">
           <div className="flex justify-center mb-6">
