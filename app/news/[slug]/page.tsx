@@ -3,7 +3,7 @@ import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { getNewsArticle, fetchNewsData } from "@/lib/data"
+import { getNewsArticle, fetchNewsData, NewsArticle } from "@/lib/data"
 import Image from "next/image"
 
 interface NewsPageProps {
@@ -135,7 +135,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
 }
 
 // Componente para artículos relacionados
-async function RelatedArticles({ currentArticle }: { currentArticle: any }) {
+async function RelatedArticles({ currentArticle }: { currentArticle: NewsArticle }) {
   try {
     const allArticles = await fetchNewsData()
     const relatedArticles = allArticles
@@ -179,6 +179,7 @@ async function RelatedArticles({ currentArticle }: { currentArticle: any }) {
       </div>
     )
   } catch (error) {
+    console.error("Error en RelatedArticles:", error)
     return null
   }
 }

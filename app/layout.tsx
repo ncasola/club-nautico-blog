@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     title: "Nautico Guimar",
     statusBarStyle: "black-translucent",
   },
-  themeColor: "#000000",
   viewport: {
     width: "device-width",
     initialScale: 1,
