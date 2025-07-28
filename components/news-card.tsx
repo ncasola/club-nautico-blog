@@ -30,7 +30,7 @@ export function NewsCard({ article }: NewsCardProps) {
   }
 
   return (
-    <Card className="group bg-white/70 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+    <Card className="group liquid-glass shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
       <Link href={`/news/${article.id}`} className="block">
         {article.image && (
           <div className="relative h-48 overflow-hidden">
@@ -56,19 +56,19 @@ export function NewsCard({ article }: NewsCardProps) {
               {article.category}
             </Badge>
           </div>
-          <h3 className="text-xl font-bold text-slate-800 group-hover:text-blue-700 transition-colors line-clamp-2">
+          <h3 className="text-xl font-bold text-black transition-colors line-clamp-2 dark:text-white">
             {article.title}
           </h3>
         </CardHeader>
 
         <CardContent className="pb-4">
-          <p className="text-slate-600 line-clamp-3 leading-relaxed">{article.excerpt}</p>
+          <p className="text-black/80 line-clamp-3 leading-relaxed dark:text-muted-foreground">{article.excerpt}</p>
         </CardContent>
 
-        <CardFooter className="pt-4 border-t border-slate-100/50">
+        <CardFooter className="pt-4">
           <Button
-            variant="ghost"
-            className="w-full justify-between group-hover:bg-blue-50/70 group-hover:text-blue-700 transition-colors"
+            variant="liquid-glass"
+            className="w-full justify-between"
           >
             Leer más
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

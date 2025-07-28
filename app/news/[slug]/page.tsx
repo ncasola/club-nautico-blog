@@ -38,11 +38,11 @@ export default async function NewsPage({ params }: NewsPageProps) {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <Link href="/">
-            <Button variant="ghost" className="mb-4 hover:bg-blue-50/50">
+            <Button variant="liquid-glass" className="mb-4 dark:text-muted-foreground">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Volver a noticias
             </Button>
@@ -50,7 +50,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
         </div>
 
         <article className="max-w-4xl mx-auto">
-          <div className="bg-white/70 backdrop-blur-sm rounded-3xl border border-white/20 shadow-xl overflow-hidden">
+          <div className="liquid-glass rounded-3xl shadow-xl overflow-hidden">
             {/* Hero Image */}
             {article.image ? (
               <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden">
@@ -88,32 +88,32 @@ export default async function NewsPage({ params }: NewsPageProps) {
                     {article.category}
                   </Badge>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 leading-tight">{article.title}</h1>
-                <p className="text-xl text-slate-600 leading-relaxed border-l-4 border-blue-200 pl-4 italic">
+                <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 leading-tight dark:text-muted-foreground">{article.title}</h1>
+                <p className="text-xl text-black/80 leading-relaxed border-l-4 border-blue-200 pl-4 italic dark:text-muted-foreground">
                   {article.excerpt}
                 </p>
               </div>
 
               {/* Article Content */}
               <div className="prose prose-lg prose-slate max-w-none">
-                <div className="text-slate-700 leading-relaxed whitespace-pre-line text-lg">{article.content}</div>
+                <div className="text-black leading-relaxed whitespace-pre-line text-lg dark:text-muted-foreground">{article.content}</div>
               </div>
 
               {/* Article Footer */}
               <div className="mt-12 pt-8 border-t border-slate-200/50">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div className="flex items-center text-sm text-slate-500">
+                  <div className="flex items-center text-sm text-black/70 dark:text-muted-foreground">
                     <Clock className="w-4 h-4 mr-2" />
                     Publicado el {formatDate(article.date)}
                   </div>
                   <div className="flex gap-3">
                     <Link href="/">
-                      <Button variant="outline" className="bg-white/70 border-slate-200/50 hover:bg-slate-50/70">
+                      <Button variant="liquid-glass" className="dark:text-muted-foreground">
                         Ver todas las noticias
                       </Button>
                     </Link>
                     <Link href="/">
-                      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                      <Button variant="liquid-glass" className="dark:text-muted-foreground">
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         Volver al inicio
                       </Button>
@@ -145,14 +145,14 @@ async function RelatedArticles({ currentArticle }: { currentArticle: any }) {
     if (relatedArticles.length === 0) return null
 
     return (
-      <div className="bg-white/50 backdrop-blur-sm rounded-2xl border border-white/20 p-6 shadow-lg">
-        <h3 className="text-xl font-bold text-slate-800 mb-4">Artículos relacionados</h3>
+      <div className="liquid-glass rounded-2xl p-6 shadow-lg">
+        <h3 className="text-xl font-bold text-black mb-4 dark:text-muted-foreground">Artículos relacionados</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {relatedArticles.map((article) => (
             <Link
               key={article.id}
               href={`/news/${article.id}`}
-              className="group block bg-white/70 rounded-lg border border-white/20 p-4 hover:shadow-md transition-all duration-200 hover:-translate-y-1"
+              className="group block liquid-glass rounded-lg p-4 hover:shadow-md transition-all duration-200 hover:-translate-y-1"
             >
               {article.image ? (
                 <div className="relative h-32 mb-3 rounded-md overflow-hidden">
@@ -169,10 +169,10 @@ async function RelatedArticles({ currentArticle }: { currentArticle: any }) {
                   <Tag className="w-8 h-8 text-slate-400" />
                 </div>
               )}
-              <h4 className="font-semibold text-slate-800 group-hover:text-blue-700 transition-colors line-clamp-2 mb-2">
+              <h4 className="font-semibold text-black group-hover:text-blue-700 transition-colors line-clamp-2 mb-2 dark:text-muted-foreground">
                 {article.title}
               </h4>
-              <p className="text-sm text-slate-600 line-clamp-2">{article.excerpt}</p>
+              <p className="text-sm text-black/80 line-clamp-2 dark:text-muted-foreground">{article.excerpt}</p>
             </Link>
           ))}
         </div>

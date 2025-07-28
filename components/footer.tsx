@@ -2,12 +2,12 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="bg-slate-800 text-white">
+    <footer className="bg-slate-800 text-white dark:bg-slate-900">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-white rounded-full p-2">
+              <div className="bg-white rounded-full p-2 border border-gray-200">
                 <Image src="/logotipo.png" alt="Club Náutico Puertito de Güímar" width={24} height={24} className="w-6 h-6" />
               </div>
               <div>

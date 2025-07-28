@@ -19,7 +19,7 @@ export default async function Hero() {
       </div>
 
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/70 to-cyan-800/80"></div>
+      <div className="absolute inset-0 bg-slate-800/80"></div>
 
       {/* Pattern overlay */}
       <div className="absolute inset-0 bg-blue-600/10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]"></div>
@@ -48,7 +48,7 @@ export default async function Hero() {
       </div>
 
       {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
     </div>
   )
 }

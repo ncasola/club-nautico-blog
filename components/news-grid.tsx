@@ -73,12 +73,12 @@ export function NewsGrid({ initialData }: NewsGridProps) {
               placeholder="Buscar noticias..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 bg-white/70 border-slate-200/50 focus:border-blue-300 focus:ring-blue-200/50"
+              className="pl-10 bg-white/70 border-slate-200/50 focus:border-blue-300 focus:ring-blue-200/50 dark:bg-black/70 dark:border-slate-800/50 dark:focus:border-blue-300 dark:focus:ring-blue-200/50"
             />
           </div>
           <div className="flex gap-2">
             <Select value={sortOrder} onValueChange={(value: "newest" | "oldest") => setSortOrder(value)}>
-              <SelectTrigger className="w-full md:w-48 bg-white/70 border-slate-200/50">
+              <SelectTrigger className="w-full md:w-48 bg-white/70 border-slate-200/50 dark:bg-black/70 dark:border-slate-800/50">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -101,7 +101,7 @@ export function NewsGrid({ initialData }: NewsGridProps) {
               size="icon"
               onClick={handleRefresh}
               disabled={isRefreshing}
-              className="bg-white/70 border-slate-200/50 hover:bg-blue-50/70"
+              className="bg-white/70 border-slate-200/50 hover:bg-blue-50/70 dark:bg-black/70 dark:border-slate-800/50 dark:hover:bg-blue-50/70"
             >
               <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
             </Button>
@@ -135,12 +135,7 @@ export function NewsGrid({ initialData }: NewsGridProps) {
 
           {hasMore && (
             <div className="text-center">
-              <Button
-                onClick={() => setVisibleCount((prev) => prev + 6)}
-                variant="outline"
-                size="lg"
-                className="bg-white/70 backdrop-blur-sm border-slate-200/50 hover:bg-blue-50/70 hover:border-blue-300/50"
-              >
+              <Button variant="liquid-glass" className="mb-4 dark:text-muted-foreground" onClick={() => setVisibleCount((prev) => prev + 6)}>
                 Cargar más noticias
               </Button>
             </div>

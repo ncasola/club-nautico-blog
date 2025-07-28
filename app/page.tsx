@@ -18,14 +18,14 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20">
+    <div className="min-h-screen bg-background">
       <Suspense fallback={<HeroSkeleton />}>
         <Hero />
       </Suspense>
       <main className="container mx-auto px-4 py-12">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-slate-800 mb-4 text-center">Últimas Noticias del Club</h1>
-          <p className="text-slate-600 text-center max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-foreground mb-4 text-center">Últimas Noticias del Club</h1>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto">
             Mantente al día con todas las actividades, eventos y novedades del Club Náutico Puertito de Güímar
           </p>
           {errorMessage && (
@@ -45,8 +45,8 @@ export default async function HomePage() {
 // Skeleton para el Hero mientras carga
 function HeroSkeleton() {
   return (
-    <div className="relative overflow-hidden h-[60vh] md:h-[70vh] lg:h-[80vh] bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-600">
-      <div className="absolute inset-0 bg-blue-600/10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]"></div>
+    <div className="relative overflow-hidden h-[60vh] md:h-[70vh] lg:h-[80vh] bg-slate-800">
+      <div className="absolute inset-0 bg-slate-700/10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]"></div>
 
       <div className="relative container mx-auto px-4 py-16 md:py-24 h-full flex items-center justify-center">
         <div className="text-center">
@@ -69,7 +69,7 @@ function HeroSkeleton() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
     </div>
   )
 }
