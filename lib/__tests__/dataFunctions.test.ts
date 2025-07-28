@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeAll, afterEach } from 'vitest'
+import { describe, it, expect, vi, afterEach } from 'vitest'
 import { getNewsArticle } from '../data'
 
 const mockArticles = [
@@ -6,10 +6,13 @@ const mockArticles = [
   { id: 'a2', title: 't2', date: 'd', excerpt: 'e', content: 'c', image: 'img2', category: 'c2' }
 ]
 
-beforeAll(() => {
-  process.env.GOOGLE_DRIVE_URL = 'https://example.com'
-  process.env.UNSPLASH_ACCESS_KEY = 'key'
-})
+// Mock del módulo env
+vi.mock('../env', () => ({
+  env: {
+    GOOGLE_DRIVE_URL: 'https://example.com',
+    UNSPLASH_ACCESS_KEY: 'test-key'
+  }
+}))
 
 afterEach(() => {
   vi.restoreAllMocks()
