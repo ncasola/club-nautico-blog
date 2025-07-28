@@ -1,0 +1,80 @@
+import Link from "next/link"
+import { Calendar, ArrowRight, Tag } from "lucide-react"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import type { NewsArticle } from "@/lib/data"
+
+interface NewsCardProps {
+  article: NewsArticle
+}
+
+export function NewsCard({ article }: NewsCardProps) {
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString("es-ES", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  }
+
+  const getCategoryColor = (category: string) => {
+    const colors = {
+      Eventos: "bg-purple-100/80 text-purple-800 border-purple-200/50",
+      Servicios: "bg-green-100/80 text-green-800 border-green-200/50",
+      Avisos: "bg-orange-100/80 text-orange-800 border-orange-200/50",
+      Deportes: "bg-blue-100/80 text-blue-800 border-blue-200/50",
+    }
+    return colors[category as keyof typeof colors] || "bg-gray-100/80 text-gray-800 border-gray-200/50"
+  }
+
+  return (
+    <Card className="group bg-white/70 backdrop-blur-sm border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+      <Link href={`/news/${article.id}`} className="block">
+        {article.image && (
+          <div className="relative h-48 overflow-hidden">
+            <Image
+              src={article.image || "https://placehold.co/600x400"}
+              alt={article.title}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          </div>
+        )}
+
+        <CardHeader className="pb-4">
+          <div className="flex items-center gap-2 mb-3">
+            <Badge variant="secondary" className="bg-blue-100/80 text-blue-800 border-blue-200/50">
+              <Calendar className="w-3 h-3 mr-1" />
+              {formatDate(article.date)}
+            </Badge>
+            <Badge variant="secondary" className={getCategoryColor(article.category)}>
+              <Tag className="w-3 h-3 mr-1" />
+              {article.category}
+            </Badge>
+          </div>
+          <h3 className="text-xl font-bold text-slate-800 group-hover:text-blue-700 transition-colors line-clamp-2">
+            {article.title}
+          </h3>
+        </CardHeader>
+
+        <CardContent className="pb-4">
+          <p className="text-slate-600 line-clamp-3 leading-relaxed">{article.excerpt}</p>
+        </CardContent>
+
+        <CardFooter className="pt-4 border-t border-slate-100/50">
+          <Button
+            variant="ghost"
+            className="w-full justify-between group-hover:bg-blue-50/70 group-hover:text-blue-700 transition-colors"
+          >
+            Leer más
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </CardFooter>
+      </Link>
+    </Card>
+  )
+}
