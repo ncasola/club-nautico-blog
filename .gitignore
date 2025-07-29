@@ -28,7 +28,3 @@ next-env.d.ts
 
 # coverage
 coverage
-
-# data
-data
-.env
